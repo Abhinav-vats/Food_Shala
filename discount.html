@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Discount</title>
+		<!--link rel="stylesheet" href="font.css" -->
+		<style>
+		 body{
+	 background-color: #99FFFF;
+ }
+ h1{
+	 font-style: italic;
+	 color: #b03060;
+	 text-align: center;
+ }
+ table{
+	margin-left: 35%;
+	border: 5px solid;
+	border-width: 30%;
+	border-collapse: collapse;
+ }
+ td{
+	 text-align: center;
+	 border-style: solid;
+	 padding: 10px;
+ }
+ .btn
+ {
+  width: auto;
+  text-align: center;
+  margin-left: 42%;
+}
+#perc{
+	font-size: 25px;
+	text-align: center;
+} 
+#price{
+	font-size: 40px;
+	font-style: italic;
+	color: #FF0000;
+	text-align: center;
+}
+</style>
+	</head>
+	<body>
+	<h1 >DISCOUNT PRICE</h1><br><br>
+	<table>
+		<tr>
+			<td>Product Name</td>
+			<td><input type="text" class="cont" id="prod_name"  autofocus><br><br></td>
+		</tr>
+		<tr>
+			<td>Product Price</td>
+			<td><input type="number" class="cont" id="prod_price"  autofocus><br><br></td>
+		</tr>
+		<tr>
+			<td>Season</td>
+			<td> <select name="season" id="season">
+				<option value="10">SUMMER SALE</option>
+				<option value="20">NEW YEAR SALE</option>
+				<option value="30">CLEARANCE SALE</option>
+			</select></td>
+		</tr>
+	</table><br><br>
+	<input type="submit" class="btn" align="center" name="submit"  onclick="displayPrice();" value="GET DISCOUNT PRICE"><br><br>
+	<div id="perc"></div>
+	<br><br>
+	<div id="price"></div>
+	
+	<script>
+	function displayPrice(){
+	 var prc = parseInt(document.getElementById("prod_price").value);
+	 var prcn = document.getElementById("season").value;
+	 document.getElementById("perc").innerHTML = "The Discount is "+ prcn+"%";
+	 var amt =(100-prcn)*prc/100 ;
+	 document.getElementById("price").innerHTML = "The discounted price: Rs "+amt+"";
+	}
+	</script>
+	
+	</body>
+	</html>
+	

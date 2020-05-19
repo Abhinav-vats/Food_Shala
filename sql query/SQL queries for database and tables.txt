@@ -1,0 +1,41 @@
+--Creating database----
+
+CREATE DATABASE foodshala;
+
+-------------------------------
+---- Creating Table For User---
+
+CREATE TABLE user (
+uid INT AUTO_INCREMENT PRIMARY KEY,
+uname VARCHAR(30),
+u_usr_name VARCHAR(30),
+upass VARCHAR(10),
+utype VARCHAR(15),
+upref VARCHAR(10));
+
+--------------------------------
+----Creating Table For Restaurant and its food details----
+
+CREATE TABLE rest_detail (
+f_id INT AUTO_INCREMENT PRIMARY KEY,
+f_name VARCHAR(30),
+f_rest VARCHAR(30),
+f_type VARCHAR(10),
+f_price INT
+);
+
+-----------------------------------------------------------
+---- Creating Table for Ordered Food-----------------------
+
+CREATE TABLE food_order (
+ord_id INT AUTO_INCREMENT PRIMARY KEY,
+ord_user VARCHAR(30),
+ord_food VARCHAR(30),
+ord_type VARCHAR(10),
+ord_quantity INT,
+ord_rate INT,
+ord_rest VARCHAR(30),
+ord_total INT
+);
+
+--------------------------------------------------------------

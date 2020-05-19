@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BookForm</title>
+	</head>
+	<body>
+		<h1>A Simple Form</h1>
+		<h3>Form Fundamental</h3>
+		<form autocomplete="on" form = "form1">
+		<fieldset>
+			<legend>Customer  Info</legend>
+			<label>Name:</label>
+			<input type="text" name="cust_name" id="cust_name" placeholder="Enter your name"><br><br>
+			<label>Telephone:</label>
+			<input type="tel" name="Telephone" id="Telephone" placeholder="Pattern: 234-567-8910"><br><br>
+			<label>Email:</label>
+			<input type="email" name="mail" id="mail" placeholder="Enter your email address"><br><br>
+		</fieldset>
+		</form>
+		<form autocomplete="on" form = "form2">
+		<fieldset>
+			<legend>Books</legend>
+			 <!--select name="books" id="books">
+				<option value="HTML5 - Bruce Lawson and Remy Sharp">HTML5 - Bruce Lawson and Remy Sharp</option>
+				<option value="HTML5 - Up and Running - Mark Pilgrim">HTML5 - Up and Running - Mark Pilgrim</option>
+				<option value="Head First HTML5 Programming - Eric Freeman">Head First HTML5 Programming - Eric Freeman</option>
+				<option value="Mastering HTML, CSS and Javascript - Laura Lemay">Mastering HTML, CSS and Javascript - Laura Lemay</option>
+			</select -->
+			<input type="text" id="books">
+			<label>Quantity(Maximum 5):</label>
+			<input type="number" name="qty" id="qty" >
+		</fieldset>
+		<input type="submit" name="submit"  onclick="checkValue();" value="Submit">
+		</form>
+		
+		<script> 
+			function checkValue()
+			{
+			var name=document.getElementById("cust_name").value; 
+			var telephone= document.getElementById("Telephone").value; 
+			var email=document.getElementById("mail").value; 
+			var book=document.getElementById("books").value; 
+			var qty=document.getElementById("qty").value; 
+			
+			if(name && telephone && email && book && qty)
+			{
+				if(book=="HTML5 - Bruce Lawson and Remy Sharp" || book=="HTML5 - Up and Running - Mark Pilgrim" || book == "Head First HTML5 Programming - Eric Freeman" || book == "Mastering HTML, CSS and Javascript - Laura Lemay")
+				{
+					alert("You have successfully submitted the Book Form");
+				}
+			}	
+			else{
+
+				return;
+			}
+		}
+		</script>
+
+	</body>
+</html>
+	
